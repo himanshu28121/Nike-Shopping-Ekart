@@ -85,7 +85,6 @@ let decrement = (id) => {
 
 let update = (id) => {
   let search = basket.find((x) => x.id === id);
-  // console.log(search.item);
   document.getElementById(id).innerHTML = search.item;
   calculation();
   TotalAmount();
@@ -93,7 +92,6 @@ let update = (id) => {
 
 let removeItem = (id) => {
   let selectedItem = id;
-  // console.log(selectedItem.id);
   basket = basket.filter((x) => x.id !== selectedItem.id);
   generateCartItems();
   TotalAmount();
@@ -127,7 +125,6 @@ let TotalAmount = () => {
         return item * search.price;
       })
       .reduce((x, y) => x + y, 0);
-    // console.log(amount);
     label.innerHTML = `
     <h2>Total Bill : $ ${amount}</h2>
     <button onclick="checkout()" class="checkout">Checkout</button>
